@@ -1,0 +1,76 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body styles */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: aquamarine;
+  }
+  
+  /* Navigation styles */
+  nav {
+    background-color: #333;
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end; /* Align navigation to the right */
+    align-items: center;
+  }
+  
+  nav button {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px;
+  }
+  
+  nav button span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px 0;
+  }
+  
+  nav div {
+    display: none;
+  }
+  
+  nav div div {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+  }
+  
+  nav a:hover {
+    background-color: #555;
+  }
+  
+  /* Content styles */
+  .content {
+    padding: 20px;
+  }
+  
+  /* Media query for larger screens */
+  @media (min-width: 768px) {
+    nav button {
+      display: none;
+    }
+  
+    nav div {
+      display: block;
+    }
+  
+    nav div div {
+      flex-direction: row;
+    }
+  }
