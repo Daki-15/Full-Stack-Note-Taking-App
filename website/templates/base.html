@@ -20,10 +20,31 @@
             </div>
         </div>
     </nav>
-    <div>
-        {% block content %}
 
-        {% endblock %}
+    {% with massages = get_flashed_messages(with_categories=true) %}
+        {% if massages %}
+            {% for category, massage in massages %}
+                {% if category == "error" %}
+                    <div role="alert">
+                        {{ massage }}
+                        <button type="button" data-dismiss="alert">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                {% else %}
+                    <div role="alert">
+                        {{ massage }}
+                        <button type="button" data-dismiss="alert">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                {% endif%}
+            {% endfor%}
+        {% endif %}
+    {% endwith %}
+
+    <div>
+        {% block content %}{% endblock %}
     </div>
 </body>
 </html>
