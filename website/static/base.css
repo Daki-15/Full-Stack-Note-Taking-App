@@ -9,16 +9,14 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  padding-top: 60px; /* To prevent content from being hidden under the fixed nav bar */
-  height: 100vh;
-  margin: 0;
+  overflow: hidden;
 }
 
 nav { 
   position: fixed;
   top: 0;
   width: 100%;
-  height: 60px; /* Adjust this value as needed */
+  height: 60px;
   z-index: 1;
   display: flex;
   align-items: center;
@@ -30,26 +28,12 @@ nav button {
   background-color: #2A7221;
   border: none;
   cursor: pointer;
-  animation: buttonFadeIn 2s ease-in forwards;
-}
-
-@keyframes colorFadeIn {
-  0% { background-color: #2A7221; }
-  100% { background-color: #119822; }
-}
-
-nav button, div[role="alert"] button, ul#notes button, form button {
-  animation: colorFadeIn 2s ease-in forwards;
 }
 
 nav a {
   color: #000;
   text-decoration: none;
   margin: 0 10px;
-}
-
-nav box-icon {
-  margin-right: auto;
 }
 
 nav a:hover {
@@ -64,49 +48,44 @@ div[role="alert"] {
   border-radius: 5px;
 }
 
-div[role="alert"] button {
-  background-color: #119822;
-  border: none;
-  cursor: pointer;
-  animation: buttonFadeIn 2s ease-in forwards;
-}
-
-h1 {
-  margin-left: auto;
-  margin-right: auto;
-}
-
 ul#notes {
   list-style-type: none;
   padding: 0;
 }
 
 ul#notes li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding: 10px;
   margin-bottom: 10px;
   border-radius: 5px;
   position: relative;
-  border: 2px solid #31CB00; /* Add this line */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15); /* Add this line */
+  border: 2px solid #31CB00;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
 }
 
-
-.delete-button {
-  margin-left: 10px;
-  order: 2;
-  border-radius: 50px; /* Adjust this value as needed */
-  padding: 10px 20px; /* Adjust these values as needed */
-  font-size: 12px; /* Adjust this value as needed */
+ul#notes button {
+  position: absolute;
+  right: 10px;  
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #119822;
+  border: none;
+  cursor: pointer;
+  border-radius: 50px;
+  padding: 10px 20px;
+  font-size: 12px;
 }
 
 form {
-  width: 80%; /* Adjust this value as needed */
-  max-width: 600px; /* Adjust this value as needed */
+  width: 80%;
+  max-width: 600px;
   margin: 0 auto;
+  justify-content: center;
 }
 
 form input, form textarea {
-  width: 100%;
   padding: 10px;
   margin-bottom: 10px;
   border-radius: 5px;
@@ -114,20 +93,19 @@ form input, form textarea {
 }
 
 textarea#note {
-  height: 100px; /* Adjust this value as needed */
-  width: 500px;
+  height: 100px;
+  width: 400px;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
 }
 
 form button {
+  margin-top: 10px;
   background-color: #119822;
   border: none;
   padding: 10px 20px;
   cursor: pointer;
-  animation: buttonFadeIn 2s ease-in forwards;
-  border-radius: 50px; /* Adjust this value as needed */
+  border-radius: 50px;
 }
 
 @keyframes fadeOut {
@@ -136,10 +114,6 @@ form button {
 }
 
 .alert {
-  position: fixed;
-  top: 60px; /* Adjust this value as needed */
-  right: 20px;
-  z-index: 9999;
-  animation: fadeOut 3s forwards;
-  animation-delay: 3s;
+  animation: fadeOut 2s forwards;
+  animation-delay: 2s;
 }
