@@ -5,11 +5,15 @@
         <h1 align="center">Notes</h1>
         <ul id="notes">
             {% for note in user.notes %}
-                <li>{{ note.data }}</li>
+                <li>{{ note.text_data }}</li>
+                <button type="button" onclick="deleteNote({{ note.id }})">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             {% endfor %}
         </ul>
-        <form action="" method="post">
+        <form action="" method="POST">
             <textarea name="note" id="note"></textarea>
+            <br />
             <div align="center">
                 <button type="submit">Add note</button>
             </div>
