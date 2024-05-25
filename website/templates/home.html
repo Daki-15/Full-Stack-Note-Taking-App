@@ -5,17 +5,18 @@
         <h1 align="center">Notes</h1>
         <ul id="notes">
             {% for note in user.notes %}
-                <li>{{ note.text_data }}</li>
-                <button type="button" onclick="deleteNote({{ note.id }})">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+                <li>
+                    <span>{{ note.text_data }}</span>
+                    <button type="button" onclick="deleteNote({{ note.id }})" class="delete-button">Delete</button>
+                </li>
             {% endfor %}
+
         </ul>
         <form action="" method="POST">
             <textarea name="note" id="note"></textarea>
             <br />
-            <div align="center">
-                <button type="submit">Add note</button>
+            <div>
+                <button type="submit"><i class='bx bxs-edit'></i>  Add note</button>
             </div>
         </form>
     {% endblock %}
